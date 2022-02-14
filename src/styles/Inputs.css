@@ -1,0 +1,38 @@
+.InputsForm {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.InputsForm input {
+  border-radius: 6px;
+  font-size: 15px;
+  padding: 8px 12px;
+  outline: none;
+}
+
+.Inactive {
+  border: 1px solid rgb(161, 161, 161);
+}
+
+.Inactive:focus {
+  border: 1px solid #000000;
+}
+
+.Error {
+  border: 1px solid red;
+}
+
+.Error::placeholder {
+  color: red;
+}
+
+.Success {
+  border: 1px solid #4caf50;
+}
+
+.Disable {
+  border: 1px solid rgb(161, 161, 161);
+  background-color: #f4f6f6;
+  color: #d5dbdb;
+}

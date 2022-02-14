@@ -1,0 +1,73 @@
+.formButtonsSmall {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+}
+
+.formButtonsSmall div {
+  max-width: 300px;
+  min-width: 150px;
+  text-align: center;
+  padding: 15px 18px;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+  margin: 5px;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.successButtonLink {
+  background-color: #2ecc71;
+  transition: all 0.25s ease;
+}
+
+.successButtonLink:hover {
+  background-color: #2cd472;
+}
+
+.successButtonLink:active {
+  background-color: #1d7441;
+  border: 2px solid #2ecc71;
+}
+
+.warningButtonLink {
+  background-color: #f1c40f;
+  transition: all 0.25s ease;
+}
+
+.warningButtonLink:hover {
+  background-color: #ffd900;
+}
+
+.warningButtonLink:active {
+  background-color: #b89d31;
+  border: 2px solid #f1c40f;
+}
+
+.dangerButtonLink {
+  background-color: #e74c3c;
+  transition: all 0.25s ease;
+}
+
+.dangerButtonLink:hover {
+  background-color: #e27777;
+}
+
+.dangerButtonLink:active {
+  background-color: #7e2a1b;
+  border: 2px solid #e74c3c;
+}
+
+.defaultButtonLink {
+  background-color: #bdc3c7;
+  transition: all 0.25s ease;
+}
+
+.defaultButtonLink:hover {
+  background-color: #dddddd;
+}
+
+.defaultButtonLink:active {
+  background-color: #555555;
+  border: 2px solid #bdc3c7;
+}
