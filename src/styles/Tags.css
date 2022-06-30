@@ -1,0 +1,44 @@
+.TagsForm {
+  width: 300px;
+  display: flex;
+  border: 1px solid rgb(87, 102, 236);
+  padding-bottom: 5%;
+  border-radius: 6px;
+  flex-wrap: wrap;
+}
+
+.tags {
+  margin: 3% 2% 0% 2%;
+  padding: 2px 7px 0px 7px;
+  min-width: 15%;
+  height: 20px;
+  font-size: 14px;
+  border-radius: 6px;
+  background-color: rgb(87, 102, 236);
+  color: white;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+
+.tags img {
+  padding-top: 6px;
+  width: 0%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.tags label {
+  margin-right: 5px;
+}
+
+.tags:hover {
+  background-color: rgb(49, 62, 179);
+}
+
+.tags:hover img {
+  padding-left: 10%;
+  width: 25%;
+  height: 50%;
+  cursor: pointer;
+}

@@ -1,0 +1,101 @@
+.Select {
+  position: relative;
+  display: inline-block;
+  margin-right: 10%;
+}
+
+.selectbtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(87, 102, 236);
+  min-width: 180px;
+  max-width: 250px;
+  color: white;
+  padding: 9px 6px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-right: 5px;
+  transition: all 0.25s ease;
+}
+
+.selectbtn:hover {
+  background-color: rgb(87, 102, 236);
+  border: 2px solid rgb(49, 62, 179);
+}
+
+.selectbtn-active {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 180px;
+  max-width: 250px;
+  color: white;
+  padding: 9px 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-right: 5px;
+  transition: all 0.25s ease;
+  background-color: rgb(49, 62, 179);
+  border: 2px solid rgb(87, 102, 236);
+}
+
+.triangleSelect {
+  margin-left: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.select-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 90px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.select-content-active p {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.triangleSelect-active {
+  margin-left: 5px;
+  transition: all 0.3s ease-in-out;
+  transform: rotate(90deg);
+}
+
+.select-content-active {
+  display: block;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 90px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.select-content-active p:hover {
+  background-color: #f1f1f1;
+}
+
+.InputDropDown {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid rgb(131, 127, 127);
+}
+
+.InputDropDown:focus {
+  border: 1px solid rgb(87, 102, 236);
+}
+
+.ChoicedValue {
+  padding-left: 10%;
+}

@@ -1,33 +1,33 @@
-.formButtonsSmall {
+/* .formButtonsSmall {
   display: flex;
-  /* flex-wrap: wrap; */
   justify-content: space-between;
-}
+} */
 
 .formButtonsSmall div {
   max-width: 300px;
   min-width: 150px;
   text-align: center;
-  padding: 15px 18px;
-  border-radius: 5px;
+  padding: 12px 14px;
+  border-radius: 8px;
   border: 2px solid #ffffff;
   margin: 5px;
   color: whitesmoke;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .successButtonLink {
-  background-color: #2ecc71;
+  background-color: rgb(87, 102, 236);
   transition: all 0.25s ease;
 }
 
 .successButtonLink:hover {
-  background-color: #2cd472;
+  background-color: rgb(104, 117, 235);
 }
 
 .successButtonLink:active {
-  background-color: #1d7441;
-  border: 2px solid #2ecc71;
+  background-color: rgb(49, 62, 179);
+  border: 2px solid rgb(87, 102, 236);
 }
 
 .warningButtonLink {

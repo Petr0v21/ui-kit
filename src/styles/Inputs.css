@@ -4,9 +4,9 @@
   justify-content: space-around;
 }
 
-.InputsForm input {
-  border-radius: 6px;
-  font-size: 15px;
+input {
+  border-radius: 3px;
+  font-size: 12px;
   padding: 8px 12px;
   outline: none;
 }
@@ -16,7 +16,7 @@
 }
 
 .Inactive:focus {
-  border: 1px solid #000000;
+  border: 1px solid rgb(87, 102, 236);
 }
 
 .Error {
@@ -29,6 +29,10 @@
 
 .Success {
   border: 1px solid #4caf50;
+}
+
+.Success::placeholder {
+  color: #4caf50;
 }
 
 .Disable {

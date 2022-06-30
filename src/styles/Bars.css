@@ -1,0 +1,8 @@
+.Bars {
+  width: 40%;
+}
+
+.Bars div {
+  margin-bottom: 3%;
+  display: flex;
+}
