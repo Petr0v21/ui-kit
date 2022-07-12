@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import "../styles/Buttons.css";
-import icon from "../accets/Image.png";
-import arrow from "../accets/ArrowDown.png";
+// import "../styles/Buttons.css";
+import icon from "../accets/Image.svg";
+import arrowDown from "../accets/ArrowDown.png";
+import arrowLeft from "../accets/ArrowLeft.png";
 
 type ButtonProps = {
   margin?: string;
@@ -22,6 +23,26 @@ type ButtonProps = {
   size?: string;
   spaceBetween?: string;
   dropdown?: string;
+  opacityHover?: string;
+  opacityActive?: string;
+};
+
+type IconButtonProps = {
+  margin?: string;
+  design?: string;
+  backcolor?: string;
+  backcolorHover?: string;
+  backcolorActive?: string;
+  borderHover?: string;
+  borderActive?: string;
+  radiusBorder?: string;
+  widthMax?: string;
+  widthMin?: string;
+  slowed?: string;
+  size?: string;
+  transform?: string;
+  opacityHover?: string;
+  opacityActive?: string;
 };
 
 const FormButtonsSmall = styled.form`
@@ -44,14 +65,17 @@ const ButonLink = styled.div`
   color: white;
   cursor: pointer;
   font-size: 14px;
-  background-color: #bdc3c7;
-  transition: all 0.25s ease;
+  background-color: #3a00e5;
+  transition: all 0.2s linear;
   &:hover {
-    background-color: #dddddd;
+    background-color: rgba(58, 0, 229, 0.7);
+    // color: #3a00e5;
+    // opacity: 0.7;
   }
   &:active {
-    background-color: #555555;
+    // background-color: #555555;
     border: 2px solid #bdc3c7;
+    opacity: 0.35;
   }
 `;
 
@@ -82,13 +106,38 @@ const Button = styled(ButonLink)<ButtonProps>`
     `;
       case "danger":
         return `
-      background-color: #e74c3c;
+      background-color: #F7F5FF;
+      color: #3a00e5;
       &:hover {
         background-color: #e27777;
       }
       &:active {
         background-color: #7e2a1b;
         border: 2px solid #e74c3c;
+      }
+    `;
+      case "lite":
+        return `
+        color: #3a00e5;
+      background-color: #F7F5FF;
+      &:hover {
+        background-color: rgba(247, 245, 255, 0.7);
+      }
+      &:active {
+        // background-color: #7e2a1b;
+        border: 2px solid #F7F5FF;
+      }
+    `;
+      case "clear":
+        return `
+        color: #3a00e5;
+      background-color: white;
+      &:hover {
+        background-color: white;
+      }
+      &:active {
+        // background-color: #7e2a1b;
+        border: 2px solid #F7F5FF;
       }
     `;
     }
@@ -144,7 +193,7 @@ const Button = styled(ButonLink)<ButtonProps>`
     }
   }}
   gap: ${(props) => (props.spaceBetween ? props.spaceBetween : "")};
-  color: ${(props) => (props.color ? props.color : "whitesmoke")};
+  color: ${(props) => (props.color ? props.color : "")};
   background-color: ${(props) => (props.backcolor ? props.backcolor : "")};
   border-radius: ${(props) => (props.radiusBorder ? props.radiusBorder : "")};
   max-width: ${(props) => (props.widthMax ? props.widthMax : "")};
@@ -161,10 +210,12 @@ const Button = styled(ButonLink)<ButtonProps>`
   &:hover {
     background-color: ${(props) => props.backcolorHover ?? ""};
     border: ${(props) => props.borderActive ?? ""};
+    opacity: ${(props) => props.opacityHover ?? ""};
   }
   &:active {
     background-color: ${(props) => props.backcolorActive ?? ""};
     border: ${(props) => props.borderActive ?? ""};
+    opacity: ${(props) => props.opacityActive ?? ""};
   }
 `;
 
@@ -194,22 +245,83 @@ const Pills = styled(Button)<ButtonProps>`
   }}
 `;
 
+const IconButton = styled.div<IconButtonProps>`
+  background-color: #3a00e5;
+  // max-width: 480px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  // align-content: center
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 228px;
+  border: 2px solid white;
+  transition: all 0.25s ease;
+  img {
+    height: 22px;
+  }
+  ${(props) => {
+    switch (props.size) {
+      case "small":
+        return `
+        img {
+          height: 22px;
+        }
+        padding: 10px;
+        border-radius: 228px;
+    `;
+      case "medium":
+        return `
+        img {
+          height: 26px;
+        }
+        padding: 12px;
+        border-radius: 228px;
+        
+  `;
+      case "large":
+        return `
+        img {
+          height: 30px;
+        }
+        padding: 16px;
+        border-radius: 228px;
+  `;
+    }
+  }}
+  transform: rotate(${(props) => props.transform ?? "0"}deg);
+  &:hover {
+    background-color: ${(props) =>
+      props.backcolorHover ?? "rgba(58, 0, 229, 0.7)"};
+    border: ${(props) => props.borderActive ?? ""};
+    opacity: ${(props) => props.opacityHover ?? ""};
+  }
+  &:active {
+    background-color: ${(props) => props.backcolorActive ?? ""};
+    border: 2px solid ${(props) => props.borderActive ?? "#bdc3c7"};
+    opacity: ${(props) => props.opacityActive ?? "0.35"};
+  }
+`;
+
 export const Buttons: React.FC<{ thema?: string }> = (props) => {
   return (
     <div>
-      <h2>Buttons</h2>
+      <h2>Button</h2>
       <FormButtonsSmall>
         <Button>Label</Button>
+        <Button design="lite">Label</Button>
+        <Button design="clear">Label</Button>
         <Button size="small">
           <img src={icon} alt="icon" />
           Label
         </Button>
         <Button size="small" dropdown="small">
           Label
-          <img src={arrow} alt="arrow" />
+          <img src={arrowDown} alt="arrow" />
         </Button>
       </FormButtonsSmall>
-      <h2>Pills</h2>
+      <h2>Pill</h2>
       <FormButtonsSmall>
         <Pills>Label</Pills>
         <Pills size="small">
@@ -218,8 +330,14 @@ export const Buttons: React.FC<{ thema?: string }> = (props) => {
         </Pills>
         <Pills size="small" dropdown="small">
           Label
-          <img src={arrow} alt="arrow" />
+          <img src={arrowDown} alt="arrow" />
         </Pills>
+      </FormButtonsSmall>
+      <h2>Icon Button</h2>
+      <FormButtonsSmall>
+        <IconButton size="large">
+          <img src={arrowLeft} alt="arrow" />
+        </IconButton>
       </FormButtonsSmall>
     </div>
   );

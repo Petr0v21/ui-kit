@@ -8,6 +8,8 @@ type InputProps = {
   backcolor?: string;
   radiusBorder?: string;
   borderColor?: string;
+  contentBefore?: string;
+  contentAfter?: string;
 };
 
 const InputStyled = styled.input`
@@ -15,6 +17,21 @@ const InputStyled = styled.input`
   font-size: 12px;
   padding: 8px 12px;
   outline: none;
+  border: 1px solid rgb(161, 161, 161);
+  &:focus {
+    border: 1px solid rgb(87, 102, 236);
+  }
+`;
+
+const SelectStyled = styled.select`
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 8px 12px;
+  outline: none;
+  border: 1px solid rgb(161, 161, 161);
+  &:focus {
+    border: 1px solid rgb(87, 102, 236);
+  }
 `;
 
 const InputAdaption = styled(InputStyled)<InputProps>`
@@ -53,6 +70,13 @@ const InputAdaption = styled(InputStyled)<InputProps>`
 `;
     }
   }}
+  &:before {
+    content: ${(props) => props.contentBefore ?? "%"};
+  }
+  &:after {
+    // content: ${(props) => props.contentAfter ?? "%"};
+    content: "%";
+  }
 `;
 
 export const Inputs: React.FC = (props) => {
@@ -60,9 +84,18 @@ export const Inputs: React.FC = (props) => {
     <div>
       <h2 className="Name">Inputs</h2>
       <form className="InputsForm">
-        <InputAdaption design="Inactive" placeholder="Inactive"></InputAdaption>
+        <InputAdaption type="number" placeholder="Number"></InputAdaption>
+        <InputAdaption type="text" placeholder="Text"></InputAdaption>
+        <InputAdaption
+          type="number"
+          min="0"
+          max="100"
+          placeholder="Percent"
+        ></InputAdaption>
+        {/* <InputAdaption design="Inactive" placeholder="Inactive"></InputAdaption>
         <InputAdaption design="Error" placeholder="Error"></InputAdaption>
-        <InputAdaption design="Success" placeholder="Success"></InputAdaption>
+        <InputAdaption design="Success" placeholder="Success"></InputAdaption> */}
+        <SelectStyled placeholder="Select"></SelectStyled>
         <InputAdaption
           design="disable"
           disabled={true}
