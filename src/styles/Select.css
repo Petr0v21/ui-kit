@@ -27,6 +27,27 @@
   border: 2px solid rgb(49, 62, 179);
 }
 
+.SelectComponent div {
+  max-height: 120px;
+  overflow-y: scroll;
+}
+
+.SelectComponent div::-webkit-scrollbar {
+  width: 5px;
+}
+
+.SelectComponent div::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.SelectComponent div::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.SelectComponent div::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .selectbtn-active {
   display: flex;
   justify-content: space-between;
@@ -86,7 +107,7 @@
 }
 
 .InputDropDown {
-  margin: 5px;
+  margin: 5px 0 5px 5px;
   padding: 5px;
   border-radius: 3px;
   border: 1px solid rgb(131, 127, 127);

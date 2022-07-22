@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Select.css";
+import { SelectDefaultComponet } from "./Inputs";
 
 export const Select: React.FC = (props) => {
   const list = ["1", "2", "3", "4"];
@@ -11,8 +12,9 @@ export const Select: React.FC = (props) => {
   };
   return (
     <div className="Select">
+      <SelectDefaultComponet />
       <h2>Select</h2>
-      <div>
+      <div className="SelectComponent">
         <button
           className={active ? "selectbtn-active" : "selectbtn"}
           onClick={() => setActive(!active)}

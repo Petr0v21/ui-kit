@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 // import "../styles/Buttons.css";
 import icon from "../accets/Image.svg";
-import arrowDown from "../accets/ArrowDown.png";
-import arrowLeft from "../accets/ArrowLeft.png";
+import arrowDown from "../accets/ArrowDown.svg";
+import arrowLeft from "../accets/ArrowLeft.svg";
 
 type ButtonProps = {
   margin?: string;
@@ -79,7 +79,7 @@ const ButonLink = styled.div`
   }
 `;
 
-const Button = styled(ButonLink)<ButtonProps>`
+export const Button = styled(ButonLink)<ButtonProps>`
   ${(props) => {
     switch (props.design) {
       case "success":
@@ -219,7 +219,7 @@ const Button = styled(ButonLink)<ButtonProps>`
   }
 `;
 
-const Pills = styled(Button)<ButtonProps>`
+export const Pills = styled(Button)<ButtonProps>`
   padding: 10px 16px;
   border-radius: 22px;
   ${(props) => {
@@ -234,18 +234,19 @@ const Pills = styled(Button)<ButtonProps>`
         return `
         padding: 10px 16px;
         border-radius: 22px;
-        
+        font-size: 14px;
   `;
       case "large":
         return `
         padding: 12px 20px;
         border-radius: 24px;
+        font-size: 16px;
   `;
     }
   }}
 `;
 
-const IconButton = styled.div<IconButtonProps>`
+export const IconButton = styled.div<IconButtonProps>`
   background-color: #3a00e5;
   // max-width: 480px;
   width: 36px;
@@ -324,6 +325,8 @@ export const Buttons: React.FC<{ thema?: string }> = (props) => {
       <h2>Pill</h2>
       <FormButtonsSmall>
         <Pills>Label</Pills>
+        <Pills design="lite">Label</Pills>
+        <Pills design="clear">Label</Pills>
         <Pills size="small">
           <img src={icon} alt="icon" />
           Label

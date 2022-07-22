@@ -1,7 +1,8 @@
-/* .App {
-  text-align: center;
+.App {
+  /* text-align: center; */
+  height: calc(200vh + 400px);
 }
-
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
